@@ -1,8 +1,4 @@
-import { getAllLifecycleHooks } from '@angular/compiler/src/lifecycle_reflector';
-import { getAttrsForDirectiveMatching } from '@angular/compiler/src/render3/view/util';
 import { Injectable } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
-import { FormularioComponent } from '../components/formulario/formulario.component';
 import { Post } from '../interfaces/post.interface';
 
 @Injectable({
@@ -10,11 +6,14 @@ import { Post } from '../interfaces/post.interface';
 })
 export class PostService {
   private arrPosts: Post[];
+  idActual: 9;
+
 
   constructor() {
 
     this.arrPosts = [
       {
+        id: 1,
         titulo: "Akihabara - La zona de electrónica en Tokyo",
         texto: "La primera vez que fuí a Akihabara pensé que había ido a otro planeta. Es alucinante la cantidad de tiendas, gente, luces y ofertas de todo tipo que puedes encontrar. Desde tiendas otakus, a enormes edificios de electronica, tiendas de belleza y edificios enormes llenos de todo tipo de restaurantes.",
         autor: "Susana S.",
@@ -23,6 +22,7 @@ export class PostService {
         categoria: "Barrios"
       },
       {
+        id: 2,
         titulo: "Kyoto",
         texto: "Kyoto es una ciudad que enamora, llena de tradiciones y mucho mas tranquila que Tokyo. Aquí tienes posibilidades de ver autenticas Geishas, intentar subir el Fushimi Inari, visitar el Templo Heian, el Kiyomizudera,Kinkaku-ji y Ginkaku-ji",
         autor: "Daniel S.",
@@ -31,6 +31,7 @@ export class PostService {
         categoria: "Ciudades"
       },
       {
+        id: 3,
         titulo: "Castillo Okayama",
         texto: "Llamado el Castillo del Cuervo por su color negro, no es un castillo de los mas grandes de Japón pero es uno, desde mi punto de vista, de los mas bonitos que he podido ver. Construido en 1597 y destruido en la Segunda Guerra Mundial, fue reconstruido en 1966",
         autor: "R.Carpin",
@@ -40,6 +41,7 @@ export class PostService {
       },
 
       {
+        id: 4,
         titulo: "Zunda mochi",
         texto: "Es un dulce tipico de Sendai que consiste en un mochi de edamame. Es bastante dulceSe dice que lo inventó Masamune Date. ",
         autor: "Susana S",
@@ -48,6 +50,7 @@ export class PostService {
         categoria: "Comida"
       },
       {
+        id: 5,
         titulo: "Castillo de Himeji",
         texto: "Otro de los castillos mas bonitos que he podido visitar. Su caracteristica principal y una de las cosas que mas llama la atencion es su color blanco. Fue construido como una fortaleza en 1346 y reconstruido en 1580 por Toyotomi Hideyoshi. También conocido como el castillo de la garza blanca, fue declarado Patrimonio de la Humanidad por la Unesco en 1993",
         autor: "R.Carpin",
@@ -56,6 +59,7 @@ export class PostService {
         categoria: "Castillos"
       },
       {
+        id: 6,
         titulo: "Ramen",
         texto: "En mis multiples visitas a Japón, he probado distintos restaurantes de ramen, sin duda para mi uno de los mejores es Sen no Kaze en Kyto. El ramen mas tipico son fideos en una sopa muy sabrosa y normalmente con Chashu como topping, aunque depende la zona hay variaciones",
         autor: "Daniel S.",
@@ -65,6 +69,7 @@ export class PostService {
       },
 
       {
+        id: 7,
         titulo: "Kiyomizu-dera",
         texto: "Llamado el Templo del Agua Pura, tiene en su complejo la cascada Otowa la cual tiene propiedades terapeuticas, dependiendo de cual de los tres chorros de agua bebas obtendras salud, larga vida o exito en el amor o negocios. Está situado en Kyoto. Es patrimonio de la humanidad desde 1994",
         autor: "Daniel S.",
@@ -73,6 +78,7 @@ export class PostService {
         categoria: "Templos"
       },
       {
+        id: 8,
         titulo: "Tokyo Tower",
         texto: "Uno de los edificios emblematicos de Tokyo, se trata en realidad de una torre de telecomunicadones y de observacion de 333 metros de altura. En su interior tiene varios miradores y un ascensor exterior que hace que la experiencia de subir al mirador sea inolvidable, tambien hay multitud de tiendas. Las luces nocturas cambian depende la estacion del año",
         autor: "Daniel S.",
@@ -86,6 +92,13 @@ export class PostService {
   getAllPosts() {
     return this.arrPosts
   }
+
+  agregarPost(post) {
+    post.id = this.idActual++
+    this.arrPosts.push(post);
+  }
+
+
 
 }
 

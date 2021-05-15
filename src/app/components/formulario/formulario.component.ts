@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { resetFakeAsyncZone } from '@angular/core/testing';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { fromEventPattern } from 'rxjs';
 import { Post } from 'src/app/interfaces/post.interface';
@@ -10,8 +11,8 @@ import { PostService } from 'src/app/services/post.service';
   styleUrls: ['./formulario.component.css']
 })
 export class FormularioComponent implements OnInit {
-  newPost: Post[];
   formulario: FormGroup;
+  service: PostService;
 
 
   constructor(private postService: PostService) {
@@ -31,6 +32,8 @@ export class FormularioComponent implements OnInit {
       categoria: new FormControl('')
     })
 
+    this.service = postService;
+
 
 
 
@@ -39,7 +42,11 @@ export class FormularioComponent implements OnInit {
   ngOnInit(): void { }
 
   onSubmit() {
-    this.formulario.value.push;
+    const newPost = this.formulario.value
+    this.service.agregarPost(newPost);
+    this.formulario.reset();
+
+
   }
 
 }
