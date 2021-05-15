@@ -1,0 +1,23 @@
+main{
+    margin: 30px;
+}
+
+
+h4, .card-text{
+    margin-bottom: 20px;   
+}
+
+
+img{
+    width: 100%
+}
+
+footer{
+    display:flex;
+    flex-wrap: wrap;
+}
+
+input{
+    width: 70%;
+}
+

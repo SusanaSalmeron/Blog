@@ -1,0 +1,21 @@
+<main>
+    <div class="card mb-3" style="width: 100%;" *ngFor="let post of posts">
+        <div class="row g-0">
+            <div class="col-md-4">
+                <img [src]="post.imagen">
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h4 class="card-title">🌸 {{post.titulo}}</h4>
+                    <p class="card-text">{{post.texto}}</p>
+                    <small class="text-muted">
+                        <p>{{post.autor}}</p>
+                        <p>Publicación: {{post.fecha}}</p>
+                        <p>{{post.categoria}}</p>
+
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,39 @@
+nav {
+    box-shadow:5px 5px 5px 2px rgb(85, 85, 128);
+}
+
+footer{
+    
+    padding: 20px;
+    background-color: #e3f2fd;
+    
+}
+
+button{
+    margin-left: 50px;
+}
+.col-4 p{
+    font-size: 30px;
+}
+
+.container-fluid a {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    cursor: pointer;
+   
+
+}
+
+.container-fluid a:hover{
+    font-size: 25px;
+    color: darkmagenta;
+     transition: 1s ease;
+  
+    
+
+}
+
+
+
+
+
