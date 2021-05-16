@@ -9,13 +9,23 @@ import { PostService } from 'src/app/services/post.service';
 })
 export class BlogComponent implements OnInit {
   posts: Post[];
+  categorias: string[];
 
-  constructor(private postService: PostService) { }
+
+  constructor(private postService: PostService) {
+
+
+  }
 
   ngOnInit(): void {
     this.posts = this.postService.getAllPosts();
+    this.categorias = this.postService.getCategorias();
 
+  }
 
+  onChange($event) {
+    console.log($event)
+    console.log(this.postService.getPostsByCategoria(this.categorias))
   }
 
 }

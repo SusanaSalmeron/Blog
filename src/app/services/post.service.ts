@@ -90,12 +90,22 @@ export class PostService {
     ]
   }
   getAllPosts() {
-    return this.arrPosts
+    return this.arrPosts;
   }
 
   agregarPost(post) {
     post.id = this.idActual++
     this.arrPosts.push(post);
+  }
+
+  getCategorias() {
+    return [...new Set(this.arrPosts.map(post => post.categoria))]
+
+  }
+
+  getPostsByCategoria(cat) {
+
+
   }
 
 
