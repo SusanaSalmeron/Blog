@@ -94,8 +94,9 @@ export class PostService {
   }
 
   agregarPost(post) {
-    post.id = this.idActual++
+    post.id = this.idActual++;
     this.arrPosts.push(post);
+
   }
 
   getCategorias() {

@@ -5,10 +5,21 @@
                 <div>
                     <label class="form-label">Titulo:</label>
                     <input type="text" class="form-control" formControlName="titulo">
+                    <p class="error"
+                        *ngIf="formulario.get('titulo').hasError('required') && formulario.get('titulo').touched">El
+                        título no puede estar vacío</p>
                 </div>
                 <div>
                     <label class="form-label">Texto:</label>
                     <input type="text" class="form-control" formControlName="texto">
+                    <p class="error"
+                        *ngIf="formulario.get('texto').hasError('required') && formulario.get('texto').touched">El texto
+                        no puede estar vacio
+                    </p>
+                    <p class="error"
+                        *ngIf="formulario.get('texto').hasError('minlength') && formulario.get('texto').touched">
+                        El texto tiene un minimo de 100 caracteres
+                    </p>
                 </div>
                 <div>
                     <label class="form-label">Autor:</label>
@@ -17,10 +28,16 @@
                 <div>
                     <label class="form-label">imagen:</label>
                     <input type="text" class="form-control" formControlName="imagen">
+                    <p class="error"
+                        *ngIf="formulario.get('imagen').hasError('required') && formulario.get('imagen').touched">
+                        El campo imagen no puede estar vacío
+                    </p>
                 </div>
                 <div>
                     <label class="form-label">Fecha:</label>
                     <input type="text" class="form-control" formControlName="fecha">
+                    <p class="error" *ngIf="dateValidator(formulario.get('fecha'))">
+                        El campo fecha debe tener el formato dd/mm/aaaa </p>
                 </div>
                 <div>
                     <label class="form-label">Categoria:</label>

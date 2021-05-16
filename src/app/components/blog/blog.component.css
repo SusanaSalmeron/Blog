@@ -21,3 +21,11 @@ input{
     width: 70%;
 }
 
+.seleccionarCategorias{
+    margin: 50px;
+    
+}
+
+.seleccionarCategorias option{
+    font-size: 25px;
+}

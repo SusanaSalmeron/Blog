@@ -1,5 +1,5 @@
 <div class="seleccionarCategorias">
-    <select name="categorias" (change)="onChange($event)">
+    <select name="categorias" class="form-select" (change)="onChange($event)">
         <option value="mostrarTodas">Mostrar Todas</option>
         <option value="{{categoria}}" *ngFor="let categoria of categorias">{{categoria}}</option>
     </select>
