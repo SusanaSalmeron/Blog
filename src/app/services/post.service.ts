@@ -105,9 +105,6 @@ export class PostService {
 
   getPostsByCategoria(cat) {
     return this.arrPosts.filter(post => post.categoria === cat)
-
-
-
   }
 
 

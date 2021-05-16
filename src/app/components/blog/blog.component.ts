@@ -24,8 +24,10 @@ export class BlogComponent implements OnInit {
   }
 
   onChange($event) {
-    if ($event.target.value) {
+    if ($event.target.value != "mostrarTodas") {
       this.posts = this.postService.getPostsByCategoria($event.target.value)
+    } else {
+      this.posts = this.postService.getAllPosts();
     }
   }
 
