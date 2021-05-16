@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostService } from 'src/app/services/post.service';
+import { debounceTime } from 'rxjs/operators';
 
 @Component({
   selector: 'formulario',
@@ -19,7 +20,7 @@ export class FormularioComponent implements OnInit {
       ]),
       texto: new FormControl('', [
         Validators.required,
-        Validators.minLength(3)
+        Validators.minLength(100)
       ]),
       autor: new FormControl(''),
       imagen: new FormControl('', [
@@ -35,12 +36,12 @@ export class FormularioComponent implements OnInit {
 
   }
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+
+  }
 
   onSubmit() {
     let newPost = this.formulario.value;
-    localStorage.setItem('post', JSON.stringify(newPost));
-    newPost = localStorage.getItem('post');
     this.service.agregarPost(newPost);
     this.formulario.reset();
 

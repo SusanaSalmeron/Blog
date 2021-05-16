@@ -36,7 +36,7 @@
                 <div>
                     <label class="form-label">Fecha:</label>
                     <input type="text" class="form-control" formControlName="fecha">
-                    <p class="error" *ngIf="dateValidator(formulario.get('fecha'))">
+                    <p class="error" *ngIf="dateValidator(formulario.get('fecha')) && formulario.get('fecha').touched">
                         El campo fecha debe tener el formato dd/mm/aaaa </p>
                 </div>
                 <div>

@@ -89,13 +89,21 @@ export class PostService {
 
     ]
   }
+
+  //TODO - concatenar los dos arrays(local y a pincho)
   getAllPosts() {
-    return this.arrPosts;
+    let postsString = localStorage.getItem('posts');
+    let postArray = postsString ? JSON.parse(postsString) : [];
+    return this.arrPosts.concat(postArray);
   }
 
   agregarPost(post) {
+    let postsString = localStorage.getItem('posts');
+    let postArray = postsString ? JSON.parse(postsString) : [];
     post.id = this.idActual++;
-    this.arrPosts.push(post);
+
+    postArray.push(post)
+    localStorage.setItem('posts', JSON.stringify(postArray))
 
   }
 
