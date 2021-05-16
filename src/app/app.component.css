@@ -3,10 +3,14 @@ nav {
 }
 
 footer{
-    
     padding: 20px;
     background-color: #e3f2fd;
-    
+    width: 100%;
+}
+
+
+footer p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 button{
@@ -20,18 +24,17 @@ button{
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     cursor: pointer;
-   
-
 }
 
 .container-fluid a:hover{
     font-size: 25px;
     color: darkmagenta;
-     transition: 1s ease;
-  
-    
+     transition: 1s ease; 
 
 }
+
+
+
 
 
 
