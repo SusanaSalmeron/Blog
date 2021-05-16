@@ -24,8 +24,9 @@ export class BlogComponent implements OnInit {
   }
 
   onChange($event) {
-    console.log($event)
-    console.log(this.postService.getPostsByCategoria(this.categorias))
+    if ($event.target.value) {
+      this.posts = this.postService.getPostsByCategoria($event.target.value)
+    }
   }
 
 }
