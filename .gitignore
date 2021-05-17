@@ -8,3 +8,13 @@ node_modules/\@angular-devkit/architect/builders/
 node_modules/\@angular-devkit/architect/
 
 node_modules/
+
+.firebase/
+
+dist/
+
+public/
+
+.firebaserc
+
+*.json

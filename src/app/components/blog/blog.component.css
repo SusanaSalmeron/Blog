@@ -10,16 +10,9 @@ h4, .card-text{
 
 img{
     width: 100%;
-    border-radius:5px;
-    
-
 }
 
-img:hover{
-    width: 200%;
-    transition: 1s ease-in-out;
-    
-}
+
 
 footer{
     display:flex;
