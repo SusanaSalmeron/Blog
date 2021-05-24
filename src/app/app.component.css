@@ -1,37 +1,43 @@
 nav {
     box-shadow:5px 5px 5px 2px rgb(85, 85, 128);
 }
+li:first-child a{
+    color:red;
+}
 
 footer{
-    
     padding: 20px;
     background-color: #e3f2fd;
-    
+    width: 100%;
+}
+
+
+footer p {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 button{
     margin-left: 50px;
 }
 .col-4 p{
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .container-fluid a {
     font-size: 20px;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     cursor: pointer;
-   
-
 }
 
 .container-fluid a:hover{
     font-size: 25px;
     color: darkmagenta;
-     transition: 1s ease;
-  
-    
+     transition: 1s ease; 
 
 }
+
+
+
 
 
 

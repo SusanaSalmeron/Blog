@@ -1,3 +1,10 @@
+<div class="seleccionarCategorias">
+    <select name="categorias" class="form-select" (change)="onChange($event)">
+        <option value="mostrarTodas">Mostrar Todas</option>
+        <option value="{{categoria}}" *ngFor="let categoria of categorias">{{categoria}}</option>
+    </select>
+</div>
+
 <main>
     <div class="card mb-3" style="width: 100%;" *ngFor="let post of posts">
         <div class="row g-0">
